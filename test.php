@@ -12,7 +12,13 @@ table td{
 <?php
 
 $array=[
-    'header'=>['網站標題','替代文字','顯示','刪除','操作'],
+    'header'=>[
+        ['網站標題','45%'],
+        ['替代文字','23%'],
+        ['顯示','7%'],
+        ['刪除','7%'],
+        ['操作',''],
+    ],
     'rows'=>[
         ["<img src='img/01B01.jpg'","<input type='text' name='text' value='AAAAAA'>","<input type='radio' name='sh' value='1'>",'checkbox','button'],
         ['img/01B02.jpg','BBBBBB','radio','checkbox','button'],

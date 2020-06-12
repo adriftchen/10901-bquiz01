@@ -10,7 +10,7 @@ class DB{
     private $dsn="mysql:host=localhost;charset=utf8;dbname=db88";
     private $root="root";
     private $password="";
-    private $table;
+    protected $table;
     private $pdo;
 
     //設定建構式
@@ -188,6 +188,63 @@ function q($sql){
     //以fetchAll的方式回傳查詢的結果
     return $this->pdo->query($sql)->fetchAll();
 }
+
+public function list($array){
+    echo "<table width='".$array['width']."'>";
+    echo "<tr class='yel'>";
+    foreach($array['header'] as $header){
+        echo "<td width='".$header[1]."'>".$header[0]."</td>";
+    }
+    echo "</tr>";
+
+    foreach($array['rows'] as $row){
+        echo "<tr>";
+        foreach($row as $col){
+           echo "<td>$col</td>";
+        }
+        echo "</tr>";
+    }
+    echo "</table>";
+
+}
+
+ public function getTable(){
+     return $this->table;
+ }
+}
+
+class Title extends DB{
+    public function __construct(){
+       parent::__construct('title');
+    }
+
+    
+    public function table(){
+        $rows=$this->all();
+        $array=[
+            'width'=>'100%',
+            'header'=>[
+                ['網站標題','45%'],
+                ['替代文字','23%'],
+                ['顯示','7%'],
+                ['刪除','7%'],
+                ['操作',''],
+            ],
+        ];
+
+        foreach($rows as $row){
+            $isChk=($row['sh']==1)?'checked':'';
+                  $array['rows'][]=[
+                    "<img src='img/".$row['img']."' style='width:300px;height:30px'>",
+                    "<input type='text' name='text[]' value='".$row['text']."'>",
+                    "<input type='radio' name='sh' value='".$row['id']."' $isChk>",
+                    "<input type='checkbox' name='del[]' value='".$row['id']."'>",
+                    "<input type='hidden' name='id[]' value='".$row['id']."'><input type='button' value='更新圖片' onclick='op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;modal/upload_".$this->table.".php?id=".$row['id']."&table=".$this->table."&#39;)'>",
+                ];
+            }
+
+        return $this->list($array);
+    }
 
 }
 
