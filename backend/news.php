@@ -12,7 +12,7 @@
                 </tr>
                 <?php
                     $table=$do;
-                    $db=new DB('news');
+                    $db=new DB($table);
                     $total=$db->count();
                     $num=4;
                     $pages=ceil($total/$num);

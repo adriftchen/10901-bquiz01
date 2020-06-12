@@ -4,15 +4,15 @@
                 <?php include "maquree.php";?>
                 <div style="height:32px; display:block;"></div>
                 <!--正中央-->
+                <div class="cent">更多最新消息</div>
+                <hr>
                 <?php
-
-                $news=new DB("news");
-                $total=$news->count(['sh'=>1]);
+                $total=$News->count(['sh'=>1]);
                 $num=5;
                 $pages=ceil($total/$num);
                 $now=(!empty($_GET['p']))?$_GET['p']:1;
                 $start=($now-1)*$num;
-                $ns=$news->all(['sh'=>1]," limit $start,$num");
+                $ns=$News->all(['sh'=>1]," limit $start,$num");
                 ?>
             <ol class="ssaa" start="<?=$start+1;?>">
             <?php

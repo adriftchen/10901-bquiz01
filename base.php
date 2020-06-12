@@ -197,14 +197,23 @@ function to($url){
     header("location:".$url);
 }
 
+$Title=new DB('title');
+$Ad=new DB('ad');
+$Mvim=new DB('mvim');
+$Bottom=new DB('bottom');
+$Image=new DB('image');
+$Total=new DB('total');
+$News=new DB('news');
+$Admin=new DB('admin');
+$Menu=new DB('menu');
 
 if(empty($_SESSION['visited'])){
-    $total=new DB('total');
-    $tt=$total->find(1);
+    $tt=$Total->find(1);
     $tt['total']++;
-    $total->save($tt);
+    $Total->save($tt);
     $_SESSION['visited']=1;
 }
+
 
 
 ?>
