@@ -1,7 +1,8 @@
 # 題組一解題步驟
 #### 解題參考影片
-**https://www.youtube.com/watch?v=lCONL7m-TZY&list=PLL26U2k-yzXvcwhiaTfgpwdLzbc_txCd5**
+* **[影片列表](https://www.youtube.com/watch?v=oa-4iN4z6Pk&list=PLL26U2k-yzXs4oXvyTJXB2IElTU2aF973)**
 
+* **[解題影片程式碼](https://github.com/mackliu/10901-bquiz01-v)**
 ## 步驟一：將素材目錄複製到崗位目錄下，確認素材內容與抽題題號一致
 監評長按下倒數計時後，可以先把桌面上素材目錄中的題目素材複製一份到自己的工作目錄下，這時要確認自己複製的題目和抽到的題目是一致的，之後都在工作目錄下來取用相關的素材，這樣比較不容易出錯；在安裝軟體的準備時間裏，也要確認一下電腦桌面中是否有包含了素材這個目錄，並且四個題組的素材都在其中。
 
